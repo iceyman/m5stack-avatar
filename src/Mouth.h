@@ -11,7 +11,7 @@
 #include "Drawable.h"
 
 namespace m5avatar {
-class Mouth final : public Drawable {
+class Mouth : public Drawable {
  private:
   uint16_t minWidth;
   uint16_t maxWidth;
