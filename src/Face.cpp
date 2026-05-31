@@ -85,6 +85,8 @@ Drawable *Face::getRightEye() { return eyeR; }
 BoundingRect *Face::getBoundingRect() { return boundingRect; }
 
 void Face::draw(DrawContext *ctx) {
+  sprite->setPsram(true);
+  tmpSprite->setPsram(true);
   sprite->createSprite(boundingRect->getWidth(), boundingRect->getHeight());
   sprite->setColorDepth(ctx->getColorDepth());
   // NOTE: setting below for 1-bit color depth
