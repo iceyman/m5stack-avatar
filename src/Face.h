@@ -12,6 +12,7 @@
 #include "Mouth.h"
 #include "Effect.h"
 #include "BatteryIcon.h"
+#include <vector>
 
 namespace m5avatar {
 
@@ -33,6 +34,7 @@ class Face {
   Balloon *b;
   Effect *h;
   BatteryIcon *battery;
+  std::vector<Drawable*> customDrawables;
 
  public:
   // constructor
@@ -49,6 +51,7 @@ class Face {
        Drawable *eyeblowR, BoundingRect *eyeblowRPos, Drawable *eyeblowL,
        BoundingRect *eyeblowLPos,
        BoundingRect *boundingRect, M5Canvas *spr, M5Canvas *tmpSpr);
+       void addDrawable(Drawable *d);
   ~Face();
   Face(const Face &other) = default;
   Face &operator=(const Face &other) = default;
