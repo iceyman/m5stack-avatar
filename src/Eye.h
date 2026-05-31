@@ -12,7 +12,7 @@
 
 namespace m5avatar {
 
-class Eye final : public Drawable {
+class Eye : public Drawable {
  private:
   uint16_t r;
   bool isLeft;
