@@ -309,5 +309,7 @@ void Avatar::setBatteryStatus(bool isCharging, int32_t batteryLevel) {
     this->batteryLevel = batteryLevel;
   }
 }
-
+void Avatar::addDrawable(Drawable *d) {
+  if (face != nullptr) face->addDrawable(d);
+}
 }  // namespace m5avatar
