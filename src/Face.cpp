@@ -124,6 +124,10 @@ void Face::draw(DrawContext *ctx) {
   h->draw(sprite, br, ctx);
   battery->draw(sprite, br, ctx);
   // drawAccessory(sprite, position, ctx);
+   // Custom overlays added via addDrawable()
+  for (auto d : customDrawables) {
+    d->draw(sprite, *boundingRect, ctx);
+  }
 
   // TODO(meganetaaan): rethink responsibility for transform function
   float scale = ctx->getScale();
@@ -171,4 +175,9 @@ void Face::draw(DrawContext *ctx) {
 
   sprite->deleteSprite();
 }
+
+void Face::addDrawable(Drawable *d) {
+  customDrawables.push_back(d);
+}
+
 }  // namespace m5avatar
