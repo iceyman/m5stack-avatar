@@ -8,6 +8,7 @@
 
 #include "ColorPalette.h"
 #include "Face.h"
+#include "Drawable.h"
 
 #ifdef SDL_h_
 typedef SDL_ThreadFunction TaskFunction_t;
@@ -122,6 +123,7 @@ class Avatar {
   void resume();
   void setBatteryIcon(bool iconStatus);
   void setBatteryStatus(bool isCharging, int32_t batteryLevel);
+  void addDrawable(Drawable *d);
 };
 
 class DriveContext {
